@@ -3,12 +3,12 @@ An easy way to convert Excel to PDF by Java code based on Apache POI and itextpd
 
 # 单文件转换 / Single files convert
 ```
-String pathOfXls = "D:\\pdfexport\\MAD 5-3-05-Octavia NF-20131025.xls";
-String pathOfPdf = "D:\\pdfexport\\MAD 5-3-05-Octavia NF-20131025.pdf";
+String pathOfXls = "/pdfexport/MAD 5-3-05-Octavia NF-20131025.xls";
+String pathOfPdf = "/pdfexport/MAD 5-3-05-Octavia NF-20131025.pdf";
 
 FileInputStream fis = new FileInputStream(pathOfXls);
 List<ExcelObject> objects = new ArrayList<ExcelObject>();
-objects.add(new ExcelObject("导航1",fis));
+objects.add(new ExcelObject("导航1", fis));
 FileOutputStream fos = new FileOutputStream(pathOfPdf);
 Excel2Pdf pdf = new Excel2Pdf(objects, fos);
 pdf.convert();
@@ -17,11 +17,11 @@ pdf.convert();
 # 多文件转换 / Multiple files convert
 多文件转换之后会合并至某一个 PDF 中，并且支持导航栏标题方式。
 ```
-FileInputStream fis1 = new FileInputStream(new File("D:\\pdfexport\\MAD 5-3-05-Octavia NF-20131025.xls"));
-FileInputStream fis2 = new FileInputStream(new File("D:\\pdfexport\\MAD 6-1-47-Octavia NF-20131025.xls"));
-FileInputStream fis3 = new FileInputStream(new File("D:\\pdfexport\\MAD 038-Superb FL DS-20131025.xls"));
+FileInputStream fis1 = new FileInputStream(new File("/pdfexport/MAD 5-3-05-Octavia NF-20131025.xls"));
+FileInputStream fis2 = new FileInputStream(new File("/pdfexport/MAD 6-1-47-Octavia NF-20131025.xls"));
+FileInputStream fis3 = new FileInputStream(new File("/pdfexport/MAD 038-Superb FL DS-20131025.xls"));
 
-FileOutputStream fos = new FileOutputStream(new File("D:\\test.pdf"));
+FileOutputStream fos = new FileOutputStream(new File("/test.pdf"));
 
 List<ExcelObject> objects = new ArrayList<ExcelObject>();
 objects.add(new ExcelObject("1.MAD 5-3-05-Octavia NF-20131025.xls",fis1));
